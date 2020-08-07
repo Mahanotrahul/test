@@ -6,3 +6,5 @@ RUN "python3 -m pip -r requirements.txt"
 RUN "curl -X POST https://api.flock.com/hooks/sendMessage/d96c1836-8bf4-47f2-b10e-2c7dce866671 -H "Content-Type: application/json" -d '{
 "text": "This is a test message"
 }'"
+
+CMD cd /opt/source; gunicorn app:app
